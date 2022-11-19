@@ -12,7 +12,7 @@ submitBtn.addEventListener("click", (e) => {
 
   if (inputValue.toLowerCase().match(validRegex)) {
     // console.log("Valid");
-
+    showErrorIcon.style.display = "none";
     errMessage.style.display = "block";
     errMessage.style.color = "#009933";
     enteredEmail.style.border = "1px solid hsl(0, 36%, 70%)";
@@ -20,9 +20,10 @@ submitBtn.addEventListener("click", (e) => {
       "Congratulations you will be notified to your email";
   } else {
     // console.log("Invalid");
-
+    errMessage.textContent = "Please provide a valid email";
     showErrorIcon.style.display = "block";
     errMessage.style.display = "block";
+    errMessage.style.color = "hsl(0, 93%, 68%)";
     enteredEmail.focus();
     enteredEmail.style.border = "1px solid hsl(0, 93%, 68%)";
   }
